@@ -159,7 +159,7 @@ export const en: Locale = {
     members: [
       {
         role: "FOUNDER · PRODUCT LEAD",
-        name: "Ploy",
+        name: "Poy",
         bio: "Leads product vision, strategy, and UX — working directly with Deaf/HoH communities to keep solutions practical. Advocate for GEDSI.",
       },
       {
