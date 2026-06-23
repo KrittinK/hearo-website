@@ -35,11 +35,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background: var(--navy-700);
   color: var(--text-primary);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: -0.005em;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 /* ── Animations ─────────────────────────────────────────── */

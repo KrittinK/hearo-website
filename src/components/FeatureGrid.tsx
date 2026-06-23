@@ -40,6 +40,7 @@ export function FeatureGrid() {
 
       {/* Mosaic grid */}
       <div
+        className="feature-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(6, 1fr)",
@@ -127,13 +128,16 @@ export function FeatureGrid() {
       <style>{`
         @media (max-width: 1024px) {
           #features { padding: 80px 40px !important; }
-          #features > div:last-child { grid-template-columns: repeat(3, 1fr) !important; }
-          #features > div:last-child > div { grid-column: span 1 !important; min-height: 220px !important; }
+          .feature-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .feature-grid > div { grid-column: span 1 !important; min-height: 220px !important; }
         }
         @media (max-width: 768px) {
           #features { padding: 64px 24px !important; }
-          #features > div:last-child { grid-template-columns: 1fr !important; }
-          #features > div:last-child > div { min-height: 180px !important; }
+        }
+        @media (max-width: 560px) {
+          #features { padding: 56px 16px !important; }
+          .feature-grid { grid-template-columns: 1fr !important; }
+          .feature-grid > div { min-height: 0 !important; padding: 28px 24px !important; }
         }
       `}</style>
     </section>

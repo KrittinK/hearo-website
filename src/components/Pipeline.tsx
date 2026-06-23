@@ -48,6 +48,7 @@ export function Pipeline() {
 
       {/* Steps */}
       <div
+        className="pipeline-grid"
         style={{
           position: "relative",
           display: "grid",
@@ -59,6 +60,7 @@ export function Pipeline() {
       >
         {/* Connector line */}
         <div
+          className="pipeline-connector"
           aria-hidden="true"
           style={{
             position: "absolute",
@@ -158,12 +160,15 @@ export function Pipeline() {
       <style>{`
         @media (max-width: 1024px) {
           #pipeline { padding: 80px 40px !important; }
-          #pipeline > div:last-child { grid-template-columns: 1fr 1fr !important; }
-          #pipeline > div:last-child > div:first-child { display: none; }
+          .pipeline-grid { grid-template-columns: 1fr 1fr !important; }
+          .pipeline-connector { display: none !important; }
         }
         @media (max-width: 768px) {
           #pipeline { padding: 64px 24px !important; }
-          #pipeline > div:last-child { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 560px) {
+          #pipeline { padding: 56px 16px !important; }
+          .pipeline-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

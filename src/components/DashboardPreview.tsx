@@ -12,6 +12,7 @@ const LOG_ROWS = [
 export function DashboardPreview() {
   return (
     <div
+      className="dash"
       style={{
         background: "#1E3FB8",
         borderRadius: 10,
@@ -108,6 +109,7 @@ export function DashboardPreview() {
         }}
       >
         <div
+          className="dash-row"
           style={{
             padding: "9px 14px",
             background: "rgba(255,255,255,0.03)",
@@ -128,6 +130,7 @@ export function DashboardPreview() {
         {LOG_ROWS.map((r, i) => (
           <div
             key={i}
+            className="dash-row"
             style={{
               padding: "9px 14px",
               borderTop: "1px solid rgba(255,255,255,0.06)",
@@ -147,6 +150,13 @@ export function DashboardPreview() {
           </div>
         ))}
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .dash { padding: 16px !important; min-height: 0 !important; }
+          .dash-row { grid-template-columns: 60px 1fr 52px 58px !important; gap: 4px; font-size: 9px !important; padding: 8px 10px !important; }
+        }
+      `}</style>
     </div>
   );
 }

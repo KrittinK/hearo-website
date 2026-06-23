@@ -7,6 +7,7 @@ export function LogoStrip() {
 
   return (
     <section
+      id="logos"
       style={{
         padding: "40px 64px",
         borderTop: "1px solid rgba(255,255,255,0.06)",
@@ -26,6 +27,7 @@ export function LogoStrip() {
         {t.logos.kicker}
       </div>
       <div
+        className="logo-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(5, 1fr)",
@@ -53,8 +55,13 @@ export function LogoStrip() {
 
       <style>{`
         @media (max-width: 768px) {
-          section { padding: 32px 24px !important; }
-          section > div:last-child { grid-template-columns: repeat(3, 1fr) !important; }
+          #logos { padding: 32px 24px !important; }
+          .logo-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
+        }
+        @media (max-width: 480px) {
+          #logos { padding: 28px 16px !important; }
+          .logo-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .logo-grid > div { font-size: 15px !important; }
         }
       `}</style>
     </section>

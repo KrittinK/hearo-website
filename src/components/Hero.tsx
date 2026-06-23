@@ -49,6 +49,7 @@ export function Hero() {
       <div className="hero-grid" />
 
       <div
+        className="hero-layout"
         style={{
           position: "relative",
           display: "grid",
@@ -123,7 +124,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
+          <div className="hero-cta" style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
             <a
               href="#contact"
               className="btn-hover"
@@ -176,6 +177,7 @@ export function Hero() {
 
           {/* Metrics */}
           <div
+            className="hero-metrics"
             style={{
               marginTop: 56,
               display: "grid",
@@ -262,6 +264,7 @@ export function Hero() {
 
           {/* Floating phone */}
           <div
+            className="hero-phone"
             style={{
               position: "absolute",
               right: -40,
@@ -277,13 +280,23 @@ export function Hero() {
       </div>
 
       <style>{`
+        .hero-layout > div { min-width: 0; }
         @media (max-width: 1024px) {
-          #hero { padding: 60px 40px 80px !important; }
-          #hero > div > div { grid-template-columns: 1fr !important; }
-          #hero .floating-phone { display: none; }
+          #hero { padding: 60px 40px 80px !important; min-height: 0 !important; }
+          .hero-layout { grid-template-columns: 1fr !important; gap: 56px !important; }
         }
         @media (max-width: 768px) {
           #hero { padding: 48px 24px 64px !important; }
+          .hero-phone { right: 0 !important; bottom: -40px !important; width: 150px !important; }
+        }
+        @media (max-width: 480px) {
+          #hero { padding: 40px 16px 56px !important; }
+          .hero-phone { display: none !important; }
+          #hero .hero-layout h1 { font-size: clamp(40px, 13vw, 60px) !important; }
+          .hero-metrics { gap: 12px !important; margin-top: 40px !important; }
+          .hero-metrics > div > div:last-child { font-size: 22px !important; }
+          .hero-cta { flex-direction: column !important; align-items: stretch !important; }
+          .hero-cta > a, .hero-cta > button { justify-content: center !important; width: 100% !important; }
         }
       `}</style>
     </section>

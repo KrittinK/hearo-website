@@ -49,6 +49,7 @@ export function Team() {
 
       {/* Member cards */}
       <div
+        className="team-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
@@ -131,12 +132,15 @@ export function Team() {
       <style>{`
         @media (max-width: 1024px) {
           #team { padding: 80px 40px !important; }
-          #team > div:last-child { grid-template-columns: 1fr !important; }
+          .team-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 768px) {
           #team { padding: 64px 24px !important; }
-          #team > div:last-child > div { flex-direction: column !important; }
-          #team > div:last-child > div > div:first-child { width: 100% !important; height: 200px !important; }
+        }
+        @media (max-width: 560px) {
+          #team { padding: 56px 16px !important; }
+          .team-grid > div { flex-direction: column !important; }
+          .team-grid > div > div:first-child { width: 100% !important; height: 260px !important; }
         }
       `}</style>
     </section>

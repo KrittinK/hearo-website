@@ -120,6 +120,7 @@ export function Nav() {
         </div>
 
         <button
+          className="nav-signin"
           style={{
             padding: "9px 16px",
             borderRadius: 8,
@@ -137,7 +138,7 @@ export function Nav() {
 
         <a
           href="#contact"
-          className="btn-hover"
+          className="btn-hover nav-contact"
           style={{
             padding: "9px 16px",
             borderRadius: 8,
@@ -162,7 +163,12 @@ export function Nav() {
           aria-label="Toggle menu"
           style={{
             display: "none",
-            padding: "8px",
+            width: 38,
+            height: 38,
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 18,
+            lineHeight: 1,
             background: "rgba(255,255,255,0.06)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: 8,
@@ -170,18 +176,74 @@ export function Nav() {
             cursor: "pointer",
           }}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <div
+          className="mobile-menu"
+          style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+            padding: "12px 16px 20px",
+            background: "rgba(11,26,102,0.97)",
+            backdropFilter: "blur(20px)",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+          }}
+        >
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                padding: "12px 8px",
+                fontSize: 16,
+                color: "rgba(234,246,255,0.85)",
+                textDecoration: "none",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+          <button
+            onClick={() => setMenuOpen(false)}
+            style={{
+              marginTop: 12,
+              padding: "12px 16px",
+              borderRadius: 8,
+              fontSize: 15,
+              fontWeight: 500,
+              background: "rgba(255,255,255,0.06)",
+              color: "#F2F9FF",
+              border: "1px solid rgba(255,255,255,0.1)",
+              cursor: "pointer",
+              fontFamily: "inherit",
+            }}
+          >
+            {t.nav.signin}
+          </button>
+        </div>
+      )}
 
       <style>{`
         @media (max-width: 768px) {
           nav { padding: 16px 24px !important; }
           .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
+          .nav-signin { display: none !important; }
+          .mobile-menu-btn { display: inline-flex !important; }
         }
         @media (max-width: 480px) {
           nav { padding: 14px 16px !important; }
+          .nav-contact { display: none !important; }
         }
       `}</style>
     </nav>

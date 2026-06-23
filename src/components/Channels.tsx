@@ -151,7 +151,13 @@ export function Channels() {
         }
         @media (max-width: 768px) {
           #channels { padding: 64px 24px !important; }
-          #channels > div > div:last-child > div { width: 160px !important; }
+          #channels > div > div:last-child { gap: 12px !important; }
+          #channels > div > div:last-child > div { width: 150px !important; }
+        }
+        @media (max-width: 480px) {
+          #channels { padding: 56px 16px !important; }
+          #channels > div > div:last-child { gap: 6px !important; }
+          #channels > div > div:last-child > div { width: 30% !important; }
         }
       `}</style>
     </section>
