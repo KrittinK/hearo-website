@@ -71,7 +71,7 @@ export function FinalCTA() {
           }}
         >
           <a
-            href="mailto:contact@hearo.app"
+            href="mailto:contact@hearoai.co"
             className="btn-hover"
             style={{
               padding: "16px 28px",
@@ -114,7 +114,7 @@ export function FinalCTA() {
             color: "rgba(234,246,255,0.55)",
           }}
         >
-          contact@hearo.app
+          contact@hearoai.co
         </div>
       </div>
 
