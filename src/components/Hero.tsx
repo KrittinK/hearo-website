@@ -143,7 +143,10 @@ export function Hero() {
             >
               {t.hero.cta1} →
             </a>
-            <button
+            <a
+              href="https://app.hearoai.co"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-hover"
               style={{
                 padding: "14px 22px",
@@ -153,6 +156,7 @@ export function Hero() {
                 background: "rgba(255,255,255,0.06)",
                 color: "#F2F9FF",
                 border: "1px solid rgba(255,255,255,0.12)",
+                textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
@@ -160,6 +164,7 @@ export function Hero() {
                 fontFamily: "inherit",
               }}
             >
+              {t.hero.cta2}
               <span
                 style={{
                   fontFamily: "var(--font-geist-mono), monospace",
@@ -169,10 +174,9 @@ export function Hero() {
                   borderRadius: 4,
                 }}
               >
-                ⌘K
+                ↗
               </span>
-              {t.hero.cta2}
-            </button>
+            </a>
           </div>
 
           {/* Metrics */}
