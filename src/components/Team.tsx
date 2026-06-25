@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useLocale } from "@/lib/locale";
 
 const PORTRAITS = [
-  { src: "/team/Ploy.png", name: "Poy" },
+  { src: "/team/Poy.png", name: "Poy" },
   { src: "/team/Roong.jpg", name: "Roong" },
 ];
 
