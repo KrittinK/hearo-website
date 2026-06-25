@@ -277,7 +277,15 @@ export function Hero() {
             }}
           >
             <div className="phone-frame">
-              <PhoneAppScreen variant="alert" />
+              <div className="phone-screen">
+                <div className="phone-notch" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/app-screenshot.png"
+                  alt="Hearo app"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                />
+              </div>
             </div>
           </div>
         </div>
