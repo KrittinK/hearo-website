@@ -278,7 +278,6 @@ export function Hero() {
           >
             <div className="phone-frame">
               <div className="phone-screen">
-                <div className="phone-notch" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/app-screenshot.png"
